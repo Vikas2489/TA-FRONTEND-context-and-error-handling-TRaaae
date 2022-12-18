@@ -1,0 +1,24 @@
+import React from 'react';
+
+function withSearch(Comp, data) {
+  return class EnhancedComponent extends React.Component {
+    state = {
+      searchTerm: '',
+    };
+
+    handleChange = ({ target: { value } }) => {
+      this.setState({ searchTerm: value });
+    };
+
+    render() {
+      return (
+        <Comp
+          handleChange={this.handleChange}
+          searchTerm={this.state.searchTerm}
+        />
+      );
+    }
+  };
+}
+
+export default withSearch;
