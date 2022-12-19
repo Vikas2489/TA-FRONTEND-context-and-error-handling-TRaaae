@@ -1,9 +1,12 @@
-import Banner from "./Banner";
-import Cards from "./Cards";
-import Paragraph from "./Paragraph";
-import Title from "./Title";
+import Banner from './Banner';
+import Cards from './Cards';
+import Paragraph from './Paragraph';
+import Title from './Title';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
-function Main({ isDarkMode }) {
+function Main(props) {
+  let isDarkMode = useContext(ThemeContext);
   return (
     <>
       <Title text="Text Component" isDarkMode={isDarkMode} />
